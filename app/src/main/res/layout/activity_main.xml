@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+This comment is my change.
 The XML layout file is used to define the user interface of an app's activity or fragment.
 The layout file contains the hierarchy of views that make up the user interface, and it specifies
 the properties and attributes of each view, such as size, position, color, and text.

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+The XML layout file is used to define the user interface of an app's activity or fragment.
+The layout file contains the hierarchy of views that make up the user interface, and it specifies
+the properties and attributes of each view, such as size, position, color, and text.
+It defines the structure and appearance of the user interface elements that make up an app's screen.
+It specifies the arrangement of views, such as how they are positioned relative to each other and
+the parent view, using layout containers such as LinearLayout or RelativeLayout.
+It sets properties and attributes for each view, such as text, color, size, padding, and margin.
+It can include references to other resources, such as drawables, strings, or dimensions, to maintain
+consistency across the app and avoid code duplication.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <!--In the middle of the screen I wrote some text-->
+    <!--The text color, size and style of the text is customized.
+    The text is constrained to the bottom and top of the screen, putting
+    it in the middle, and it is constrained to the left side
+    of the screen (the parent)
+    This is the only file that has been modified for this textView.
+    -->
+    <TextView
+        android:id="@+id/tvText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:text="This is the start of a list app"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--In the left bottom corner I put a text box-->
+    <!--The text box is constrained to the bottom, to the left side of the screen,
+     and the right side of the "add to do" button.
+     Also it can be as wide as it can get (0dp).
+     This is the only file that has been modified for this EditText.
+     -->
+    <EditText
+        android:id="@+id/etTodoTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter Todo Title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnAddTodo"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!--In the middle bottom I put a button -->
+    <!--The button is as big as the content in it -->
+    <!--The button is constrained to the bottom and to the left side
+    of the "delete done" button
+    This is the only file that has been modified for this button.
+    -->
+    <Button
+        android:id="@+id/btnAddTodo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Todo"
+        app:layout_constraintBottom_toBottomOf="@+id/etTodoTitle"
+        app:layout_constraintEnd_toStartOf="@+id/btnDeleteDoneTodo" />
+
+    <!--In the right bottom corner I put another button-->
+    <!--The button is as big as the content in it -->
+    <!--The button is constrained to the right side and the bottom of the screen
+     This is the only file that has been modified for this button.
+     -->
+    <Button
+        android:id="@+id/btnDeleteDoneTodo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete done"
+        app:layout_constraintBottom_toBottomOf="@+id/etTodoTitle"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!--In the top right corner I put a rating bar  with 5 stars-->
+    <!--The incremental step size of the rating value when the user
+     interacts with the rating bar is 0.5-->
+    <!--It is constrained to be to the top and to the left side of screen-->
+    <!--This is the only file that has been modified for this rating bar -->
+    <!-- The user can select a rating value by tapping on the stars -->
+    <!--This is the only file that has been modified for this Rating bar -->
+    <RatingBar
+        android:id="@+id/rbRatingStar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="#FFC107"
+        android:isIndicator="false"
+        android:numStars="5"
+        android:progressTint="#FFC107"
+        android:rating="3.5"
+        android:stepSize="0.5"
+        android:contentDescription="Rating bar for user rating"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,5 @@
+<resources>
+    <!--The values folder is a directory where you can store XML files that define
+various resources used in your app, such as strings, colors, dimensions, and styles.-->
+    <string name="app_name">Hello Android World</string>
+</resources>
